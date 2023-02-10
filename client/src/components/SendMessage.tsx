@@ -14,6 +14,7 @@ type Props = {
 
 // local server
 // http://localhost:8800/sendmessage
+// http://localhost:8000/messages
 
 const SendMessage = ({ userId, firstName, lastName, phone }: Props) => {
   const { OTP } = useOTP({});
@@ -60,7 +61,7 @@ const SendMessage = ({ userId, firstName, lastName, phone }: Props) => {
 
     const debounced = setTimeout(() => {
       if (singleData) {
-        messageFetchData("http://localhost:8000/messages", {
+        messageFetchData("https://fake-contacts.onrender.com/messages", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
