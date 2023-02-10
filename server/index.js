@@ -15,6 +15,10 @@ app.listen(8800, () => {
   console.log("Connected to Backend! Port: 8800");
 });
 
+app.get("/", (req, res) => {
+  res.send("Connected to Backend!")
+})
+
 app.post("/sendmessage", (req, res) => {
   const { message, phone } = req.body;
   return client.messages
