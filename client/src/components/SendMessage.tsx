@@ -11,6 +11,10 @@ type Props = {
   lastName: string;
   phone: string;
 };
+
+// local server
+// http://localhost:8800/sendmessage
+
 const SendMessage = ({ userId, firstName, lastName, phone }: Props) => {
   const { OTP } = useOTP({});
   const [text, setText] = useState<string>("");
@@ -33,7 +37,7 @@ const SendMessage = ({ userId, firstName, lastName, phone }: Props) => {
       message: text,
       phone: phone,
     };
-    fetchData("http://localhost:8800/sendmessage", {
+    fetchData("https://contacts-app-app2.onrender.com/sendmessage", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
