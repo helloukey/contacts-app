@@ -9,6 +9,9 @@ dayjs.extend(relativeTime);
 
 type Props = {};
 
+// local server
+// http://localhost:8000/messages
+
 const MessagesTable = (props: Props) => {
   const {
     data: messages,
@@ -18,7 +21,7 @@ const MessagesTable = (props: Props) => {
   } = useFetch({});
 
   useEffect(() => {
-    messagesFetchData("http://localhost:8000/messages");
+    messagesFetchData("https://fake-contacts.onrender.com/messages");
   }, [messagesFetchData]);
 
   return (

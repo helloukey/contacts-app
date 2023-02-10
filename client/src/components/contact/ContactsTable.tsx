@@ -4,13 +4,16 @@ import { Link } from "react-router-dom";
 import ErrorMessage from "../ErrorMessage";
 import Loading from "../Loading";
 
+// Local Server
+// http://localhost:8000/contacts
+
 type Props = {};
 
 const ContactsTable = (props: Props) => {
   const { data, error, loading, fetchData } = useFetch({});
 
   useEffect(() => {
-    fetchData("http://localhost:8000/contacts");
+    fetchData("https://fake-contacts.onrender.com/contacts");
   }, [fetchData]);
 
   return (

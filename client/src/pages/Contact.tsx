@@ -7,13 +7,16 @@ import ErrorMessage from "../components/ErrorMessage";
 import avatar from "../assets/avatar.svg";
 import BackButton from "../components/BackButton";
 
+// Local server
+// http://localhost:8000/contacts/
+
 type Props = {};
 const Contact = (props: Props) => {
   const { id } = useParams();
   const { singleData, error, loading, fetchData } = useFetch({});
 
   useEffect(() => {
-    fetchData("http://localhost:8000/contacts/" + id);
+    fetchData("https://fake-contacts.onrender.com/contacts/" + id);
   }, [fetchData, id]);
   return (
     <div className="w-full h-full max-w-md mx-auto flex flex-col justify-center items-center gap-5 px-4">

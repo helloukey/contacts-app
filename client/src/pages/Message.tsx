@@ -7,12 +7,16 @@ import ErrorMessage from "../components/ErrorMessage";
 import BackButton from "../components/BackButton";
 
 type Props = {};
+
+// Local server
+// http://localhost:8000/messages/
+
 const Message = (props: Props) => {
   const { id } = useParams();
   const { singleData, error, loading, fetchData } = useFetch({});
 
   useEffect(() => {
-    fetchData("http://localhost:8000/messages/" + id);
+    fetchData("https://fake-contacts.onrender.com/messages/" + id);
   }, [fetchData, id]);
   return (
     <div className="w-full h-full max-w-md mx-auto flex flex-col justify-center items-center gap-5 px-4">
