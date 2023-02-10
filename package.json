@@ -1,0 +1,15 @@
+{
+  "name": "contacts-assignment",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "setup-server": "cd server && npm install server",
+    "start-server": "cd server && nodemon index.js",
+    "setup-client": "cd client && npm install",
+    "start-database": "cd client && npm run database",
+    "start-client": "cd client && npm run start"
+  },
+  "author": "",
+  "license": "ISC"
+}

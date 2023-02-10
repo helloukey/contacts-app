@@ -1,0 +1,102 @@
+{
+  "contacts": [
+    {
+      "id": 1,
+      "firstName": "Valva",
+      "lastName": "Nuer",
+      "phone": "+918533273823"
+    },
+    {
+      "id": 2,
+      "firstName": "John",
+      "lastName": "Cena",
+      "phone": "+917733273843"
+    },
+    {
+      "id": 3,
+      "firstName": "Ramesh",
+      "lastName": "Villar",
+      "phone": "+919003273843"
+    },
+    {
+      "id": 4,
+      "firstName": "Tarun",
+      "lastName": "Vikesh",
+      "phone": "+917773273843"
+    },
+    {
+      "id": 5,
+      "firstName": "Kisan",
+      "lastName": "Network",
+      "phone": "+919810153260"
+    },
+    {
+      "id": 6,
+      "firstName": "Kunal",
+      "lastName": "Ukey",
+      "phone": "+917972068528"
+    }
+  ],
+  "messages": [
+    {
+      "id": "asdfjasfleea984590345sdjfk",
+      "userId": 1,
+      "firstName": "Cassio",
+      "lastName": "Zen",
+      "phone": "+918533273823",
+      "date": "2023-02-09T15:08:08.127Z",
+      "message": "Hi, Your OTP is: 123456",
+      "OTP": "123456"
+    },
+    {
+      "id": "9bb751cc-2c5f-4fa2-a1e9-450fbacd02f0",
+      "userId": 6,
+      "firstName": "Kunal",
+      "lastName": "Ukey",
+      "phone": "+917972068528",
+      "date": "2023-02-09T19:26:59.469Z",
+      "message": "Hi, Your OTP is: 951656.",
+      "OTP": 951656
+    },
+    {
+      "id": "204ba5d8-5802-40bc-af06-1affd714bb08",
+      "userId": 3,
+      "firstName": "Ramesh",
+      "lastName": "Villar",
+      "phone": "+919003273843",
+      "date": "2023-02-09T19:27:21.566Z",
+      "message": "Hi, Your OTP is: 866761.",
+      "OTP": 866761
+    },
+    {
+      "id": "8771ad9c-ead7-4692-bf3d-9df6042ee64b",
+      "userId": 6,
+      "firstName": "Kunal",
+      "lastName": "Ukey",
+      "phone": "+917972068528",
+      "date": "2023-02-09T19:28:29.323Z",
+      "message": "Hi, Your OTP is: 969241.",
+      "OTP": 969241
+    },
+    {
+      "id": "ad55f593-437a-4132-8906-bd5e8c26d6dd",
+      "userId": 1,
+      "firstName": "Valva",
+      "lastName": "Nuer",
+      "phone": "+918533273823",
+      "date": "2023-02-09T19:28:43.364Z",
+      "message": "Hi, Your OTP is: 550787.",
+      "OTP": 550787
+    },
+    {
+      "id": "5f526498-a30a-418d-a3f9-e5255b45d89d",
+      "userId": 3,
+      "firstName": "Ramesh",
+      "lastName": "Villar",
+      "phone": "+919003273843",
+      "date": "2023-02-10T04:01:20.650Z",
+      "message": "Hi, Your OTP is: 641127.",
+      "OTP": 641127
+    }
+  ]
+}
