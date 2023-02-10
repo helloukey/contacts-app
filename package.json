@@ -8,6 +8,7 @@
     "start-dev-server": "cd server && nodemon index.js",
     "start-server": "cd server && node index.js",
     "setup-client": "cd client && npm install",
+    "build-client": "cd client && npm run build",
     "start-database": "cd client && npm run database",
     "start-client": "cd client && npm run start"
   },
