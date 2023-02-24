@@ -20,7 +20,7 @@ const ContactsTable = (props: Props) => {
     <>
       <div className="overflow-x-auto overflow-y-auto">
         {/* Data when available */}
-        {data && !loading && !error && (
+        {data && (
           <table className="table w-full">
             <thead>
               <tr>
@@ -48,14 +48,14 @@ const ContactsTable = (props: Props) => {
         )}
 
         {/* When data is loading */}
-        {!data && loading && !error && (
+        {loading && (
           <div className="flex justify-center items-center">
             <Loading />
           </div>
         )}
 
         {/* When Error occurs */}
-        {!data && !loading && error && <ErrorMessage error={error} />}
+        {error && <ErrorMessage error={error} />}
       </div>
     </>
   );

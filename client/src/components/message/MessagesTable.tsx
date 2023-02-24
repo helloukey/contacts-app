@@ -27,7 +27,7 @@ const MessagesTable = (props: Props) => {
     <>
       <div className="overflow-x-auto overflow-y-auto">
         {/* When data is available */}
-        {messages && !messagesLoading && !messagesError && (
+        {messages && (
           <table className="table w-full">
             <thead>
               <tr>
@@ -68,14 +68,14 @@ const MessagesTable = (props: Props) => {
         )}
 
         {/* When Data is Loading */}
-        {!messages && messagesLoading && !messagesError && (
+        {messagesLoading && (
           <div className="flex justifycenter items-center">
             <Loading />
           </div>
         )}
 
         {/* When Error occurs */}
-        {!messages && !messagesLoading && messagesError && (
+        {messagesError && (
           <ErrorMessage error={messagesError} />
         )}
       </div>
