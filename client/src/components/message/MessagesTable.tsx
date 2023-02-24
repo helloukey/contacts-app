@@ -8,7 +8,7 @@ import Loading from "../Loading";
 dayjs.extend(relativeTime);
 
 type Props = {};
-// https://jittery-pear-drawers.cyclic.app/
+// https://fake-contacts-9jle.onrender.com
 // http://localhost:8000/messages
 
 const MessagesTable = (props: Props) => {
@@ -20,7 +20,7 @@ const MessagesTable = (props: Props) => {
   } = useFetch({});
 
   useEffect(() => {
-    messagesFetchData("https://jittery-pear-drawers.cyclic.app/messages");
+    messagesFetchData("https://fake-contacts-9jle.onrender.com/messages");
   }, [messagesFetchData]);
 
   return (

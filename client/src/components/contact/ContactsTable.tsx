@@ -6,14 +6,14 @@ import Loading from "../Loading";
 
 type Props = {};
 
-// https://jittery-pear-drawers.cyclic.app/
+// https://fake-contacts-9jle.onrender.com
 // http://localhost:8000/contacts
 
 const ContactsTable = (props: Props) => {
   const { data, error, loading, fetchData } = useFetch({});
 
   useEffect(() => {
-    fetchData("https://jittery-pear-drawers.cyclic.app/contacts");
+    fetchData("https://fake-contacts-9jle.onrender.com/contacts");
   }, [fetchData]);
 
   return (

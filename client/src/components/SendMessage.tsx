@@ -15,13 +15,13 @@ type Props = {
 // http://localhost:8800/sendmessage
 // http://localhost:8000/messages
 
-// https://nice-frog-clothes.cyclic.app/
-// https://jittery-pear-drawers.cyclic.app/messages
-
+// https://contacts-app-backend-36uz.onrender.com
+// https://fake-contacts-9jle.onrender.com/messages
 
 const SendMessage = ({ userId, firstName, lastName, phone }: Props) => {
   const { OTP } = useOTP({});
   const [text, setText] = useState<string>("");
+  const [textError, setTextError] = useState<string>("");
   const { singleData, error, loading, fetchData } = useFetch({});
   const navigate = useNavigate();
 
@@ -31,25 +31,42 @@ const SendMessage = ({ userId, firstName, lastName, phone }: Props) => {
     loading: messageLoading,
     fetchData: messageFetchData,
   } = useFetch({});
-  console.log(messageData, messageError)
 
   useEffect(() => {
     setText(`Hi, Your OTP is: ${OTP}.`);
   }, [OTP]);
 
   const handleSubmit = () => {
+    // Reset Text Error
+    setTextError("");
+
+    // Error if no text is given
+    if (text.length === 0) {
+      setTextError("Message cannot be empty.");
+      return;
+    }
+
+    // Error if 6 digit OTP is not generated
+    if (/[0-9]{6}/.test(text)) {
+      setTextError("6 Digit OTP is not generated. Try refreshing this page.");
+      return;
+    }
+
     const database = {
       message: text,
       phone: phone,
     };
-    console.log(database)
-    fetchData("https://nice-frog-clothes.cyclic.app/sendmessage", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(database),
-    });
+
+    // Send message when no error
+    if(!textError) {
+      fetchData("https://contacts-app-backend-36uz.onrender.com/sendmessage", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(database),
+      });
+    }
   };
 
   useEffect(() => {
@@ -66,7 +83,7 @@ const SendMessage = ({ userId, firstName, lastName, phone }: Props) => {
 
     const debounced = setTimeout(() => {
       if (singleData) {
-        messageFetchData("https://jittery-pear-drawers.cyclic.app/messages", {
+        messageFetchData("https://fake-contacts-9jle.onrender.com/messages", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -123,8 +140,8 @@ const SendMessage = ({ userId, firstName, lastName, phone }: Props) => {
       {/* When Error occurs */}
       {(!singleData || !messageData) &&
         (!loading || !messageLoading) &&
-        (error || messageError) && (
-          <ErrorMessage error={error || messageError} />
+        (error || messageError || textError) && (
+          <ErrorMessage error={error || messageError || textError} />
         )}
     </>
   );

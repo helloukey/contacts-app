@@ -8,7 +8,7 @@ import avatar from "../assets/avatar.svg";
 import BackButton from "../components/BackButton";
 
 type Props = {};
-// https://jittery-pear-drawers.cyclic.app/contacts
+// https://fake-contacts-9jle.onrender.com/contacts
 // http://localhost:8000/contacts
 
 const Contact = (props: Props) => {
@@ -16,7 +16,7 @@ const Contact = (props: Props) => {
   const { singleData, error, loading, fetchData } = useFetch({});
 
   useEffect(() => {
-    fetchData("https://jittery-pear-drawers.cyclic.app/contacts/" + id);
+    fetchData("https://fake-contacts-9jle.onrender.com/contacts/" + id);
   }, [fetchData, id]);
   return (
     <div className="w-full h-full max-w-md mx-auto flex flex-col justify-center items-center gap-5 px-4">
