@@ -8,8 +8,7 @@ import Loading from "../Loading";
 dayjs.extend(relativeTime);
 
 type Props = {};
-
-// local server
+// https://jittery-pear-drawers.cyclic.app/
 // http://localhost:8000/messages
 
 const MessagesTable = (props: Props) => {
@@ -21,16 +20,15 @@ const MessagesTable = (props: Props) => {
   } = useFetch({});
 
   useEffect(() => {
-    messagesFetchData("https://fake-contacts.onrender.com/messages");
+    messagesFetchData("https://jittery-pear-drawers.cyclic.app/messages");
   }, [messagesFetchData]);
 
   return (
-    <div>
-      {/* When Data is available */}
-      {messages && !messagesLoading && !messagesError && (
-        <div className="overflow-x-auto overflow-y-auto">
+    <>
+      <div className="overflow-x-auto overflow-y-auto">
+        {/* When data is available */}
+        {messages && !messagesLoading && !messagesError && (
           <table className="table w-full">
-            {/* Head */}
             <thead>
               <tr>
                 <th></th>
@@ -67,17 +65,21 @@ const MessagesTable = (props: Props) => {
                 ))}
             </tbody>
           </table>
-        </div>
-      )}
+        )}
 
-      {/* When Data is Loading */}
-      {!messages && messagesLoading && !messagesError && <Loading />}
+        {/* When Data is Loading */}
+        {!messages && messagesLoading && !messagesError && (
+          <div className="flex justifycenter items-center">
+            <Loading />
+          </div>
+        )}
 
-      {/* When Error occurs */}
-      {!messages && !messagesLoading && messagesError && (
-        <ErrorMessage error={messagesError} />
-      )}
-    </div>
+        {/* When Error occurs */}
+        {!messages && !messagesLoading && messagesError && (
+          <ErrorMessage error={messagesError} />
+        )}
+      </div>
+    </>
   );
 };
 export default MessagesTable;

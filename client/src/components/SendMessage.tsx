@@ -12,9 +12,12 @@ type Props = {
   phone: string;
 };
 
-// local server
 // http://localhost:8800/sendmessage
 // http://localhost:8000/messages
+
+// https://nice-frog-clothes.cyclic.app/
+// https://jittery-pear-drawers.cyclic.app/messages
+
 
 const SendMessage = ({ userId, firstName, lastName, phone }: Props) => {
   const { OTP } = useOTP({});
@@ -28,6 +31,7 @@ const SendMessage = ({ userId, firstName, lastName, phone }: Props) => {
     loading: messageLoading,
     fetchData: messageFetchData,
   } = useFetch({});
+  console.log(messageData, messageError)
 
   useEffect(() => {
     setText(`Hi, Your OTP is: ${OTP}.`);
@@ -38,7 +42,8 @@ const SendMessage = ({ userId, firstName, lastName, phone }: Props) => {
       message: text,
       phone: phone,
     };
-    fetchData("https://contacts-app-app2.onrender.com/sendmessage", {
+    console.log(database)
+    fetchData("https://nice-frog-clothes.cyclic.app/sendmessage", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -61,7 +66,7 @@ const SendMessage = ({ userId, firstName, lastName, phone }: Props) => {
 
     const debounced = setTimeout(() => {
       if (singleData) {
-        messageFetchData("https://fake-contacts.onrender.com/messages", {
+        messageFetchData("https://jittery-pear-drawers.cyclic.app/messages", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",

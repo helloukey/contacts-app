@@ -4,25 +4,24 @@ import { Link } from "react-router-dom";
 import ErrorMessage from "../ErrorMessage";
 import Loading from "../Loading";
 
-// Local Server
-// http://localhost:8000/contacts
-
 type Props = {};
+
+// https://jittery-pear-drawers.cyclic.app/
+// http://localhost:8000/contacts
 
 const ContactsTable = (props: Props) => {
   const { data, error, loading, fetchData } = useFetch({});
 
   useEffect(() => {
-    fetchData("https://fake-contacts.onrender.com/contacts");
+    fetchData("https://jittery-pear-drawers.cyclic.app/contacts");
   }, [fetchData]);
 
   return (
     <>
-      {/* When Data is available */}
-      {data && !loading && !error && (
-        <div className="overflow-x-auto overflow-y-auto">
+      <div className="overflow-x-auto overflow-y-auto">
+        {/* Data when available */}
+        {data && !loading && !error && (
           <table className="table w-full">
-            {/* Head */}
             <thead>
               <tr>
                 <th></th>
@@ -46,18 +45,18 @@ const ContactsTable = (props: Props) => {
               ))}
             </tbody>
           </table>
-        </div>
-      )}
+        )}
 
-      {/* When Data is Loading */}
-      {!data && loading && !error && (
-        <Loading />
-      )}
+        {/* When data is loading */}
+        {!data && loading && !error && (
+          <div className="flex justify-center items-center">
+            <Loading />
+          </div>
+        )}
 
-      {/* When Error occurs */}
-      {!data && !loading && error && (
-        <ErrorMessage error={error} />
-      )}
+        {/* When Error occurs */}
+        {!data && !loading && error && <ErrorMessage error={error} />}
+      </div>
     </>
   );
 };

@@ -7,16 +7,15 @@ import ErrorMessage from "../components/ErrorMessage";
 import BackButton from "../components/BackButton";
 
 type Props = {};
-
-// Local server
-// http://localhost:8000/messages/
+// https://jittery-pear-drawers.cyclic.app/messages
+// http://localhost:8000/messages
 
 const Message = (props: Props) => {
   const { id } = useParams();
   const { singleData, error, loading, fetchData } = useFetch({});
 
   useEffect(() => {
-    fetchData("https://fake-contacts.onrender.com/messages/" + id);
+    fetchData("https://jittery-pear-drawers.cyclic.app/messages/" + id);
   }, [fetchData, id]);
   return (
     <div className="w-full h-full max-w-md mx-auto flex flex-col justify-center items-center gap-5 px-4">
