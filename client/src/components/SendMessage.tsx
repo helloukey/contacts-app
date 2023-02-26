@@ -47,10 +47,10 @@ const SendMessage = ({ userId, firstName, lastName, phone }: Props) => {
     }
 
     // Error if 6 digit OTP is not generated
-    if (/[0-9]{6}/.test(text)) {
-      setTextError("6 Digit OTP is not generated. Try refreshing this page.");
-      return;
-    }
+    // if (/[0-9]{6}/.test(text)) {
+    //   setTextError("6 Digit OTP is not generated. Try refreshing this page.");
+    //   return;
+    // }
 
     const database = {
       message: text,
