@@ -5,7 +5,9 @@ const useOTP = (props: Props) => {
   const [OTP, setOTP] = useState<null | number>(null);
 
   useEffect(() => {
-    const otp = Math.floor(Math.random() * 1000000);
+    const minm = 100000;
+    const maxm = 999999;
+    const otp = Math.floor(Math.random() * (maxm - minm + 1)) + minm;
     setOTP(otp);
   }, []);
 
